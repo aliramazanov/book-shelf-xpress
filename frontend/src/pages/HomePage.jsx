@@ -26,16 +26,16 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="p-6">
+    <div className="p-6 mt-2">
       <div className="flex justify-center items-center gap-x-4">
         <button
-          className="bg-blue-500 hover:bg-violet-800 text-white px-10 py-3 rounded-2xl text-2xl"
+          className="bg-blue-500 hover:bg-violet-800 text-white px-6 py-3 rounded-lg text-2xl"
           onClick={() => setShowType("table")}
         >
           Table
         </button>
         <button
-          className="bg-blue-500 hover:bg-violet-800 text-white px-10 py-3 rounded-2xl text-2xl"
+          className="bg-blue-500 hover:bg-violet-800 text-white px-6 py-3 rounded-lg text-2xl"
           onClick={() => setShowType("card")}
         >
           Card
