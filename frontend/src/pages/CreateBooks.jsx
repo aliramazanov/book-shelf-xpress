@@ -21,7 +21,7 @@ const CreateBooks = () => {
     axios
       .post("http://localhost:5555/books", data)
       .then(() => {
-        enqueueSnackbar("Book Created successfully", { variant: "success" });
+        enqueueSnackbar("Book has been created", { variant: "success" });
         navigate("/");
       })
       .catch((error) => {

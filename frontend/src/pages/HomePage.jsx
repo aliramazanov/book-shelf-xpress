@@ -8,20 +8,16 @@ import BooksCard from "../components/BooksCard.jsx";
 
 const HomePage = () => {
   const [books, setBooks] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [showType, setShowType] = useState("table");
 
   useEffect(() => {
-    setLoading(true);
     axios
       .get("http://localhost:5555/books")
       .then((response) => {
         setBooks(response.data.data);
-        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
-        setLoading(false);
       });
   }, []);
 
