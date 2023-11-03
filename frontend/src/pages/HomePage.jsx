@@ -38,7 +38,7 @@ const HomePage = () => {
         </button>
       </div>
       <div className="flex justify-center items-center flex-col">
-        <h1 className="text-4xl mt-8" text-center>
+        <h1 className="text-4xl mt-8text-center">
           List of the Books On the Shelf:
         </h1>
         <Link to="/books/create">
