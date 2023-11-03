@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import BackButton from "../components/BackButton";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
@@ -8,7 +8,7 @@ const EditBook = () => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [year, setYear] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [setLoading] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
   const { enqueueSnackbar } = useSnackbar();

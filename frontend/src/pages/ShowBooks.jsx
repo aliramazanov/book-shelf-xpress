@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import BackButton from "../components/BackButton";
 
 const ShowBook = () => {
   const [book, setBook] = useState({});
-  const [loading, setLoading] = useState(false);
+  const [setLoading] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {

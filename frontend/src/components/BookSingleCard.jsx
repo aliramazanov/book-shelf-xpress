@@ -1,6 +1,7 @@
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { PiBookOpenTextLight } from "react-icons/pi";
-import { BiUserCircle, BiShow } from "react-icons/bi";
+import { BiUserCircle } from "react-icons/bi";
 import { AiOutlineEdit } from "react-icons/ai";
 import { BsInfoCircle } from "react-icons/bs";
 import { MdOutlineDelete } from "react-icons/md";
@@ -27,13 +28,13 @@ const BookSingleCard = ({ book }) => {
         <h2 className="my-1 text-xl">{book.author}</h2>
       </div>
       <div className="flex justify-between items-center gap-x-2 mt-4 p-4">
-        <Link to={`/books/details/${book._id}`}>
+        <Link to={`/books/details/${book.id}`}>
           <BsInfoCircle className="text-2xl text-blue-600" />
         </Link>
-        <Link to={`/books/edit/${book._id}`}>
+        <Link to={`/books/edit/${book.id}`}>
           <AiOutlineEdit className="text-2xl text-green-600" />
         </Link>
-        <Link to={`/books/delete/${book._id}`}>
+        <Link to={`/books/delete/${book.id}`}>
           <MdOutlineDelete className="text-2xl text-red-600" />
         </Link>
       </div>
@@ -42,6 +43,15 @@ const BookSingleCard = ({ book }) => {
       )}
     </div>
   );
+};
+
+BookSingleCard.propTypes = {
+  book: PropTypes.shape({
+    year: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default BookSingleCard;

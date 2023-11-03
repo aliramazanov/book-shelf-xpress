@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import BookSingleCard from "./BookSingleCard.jsx";
 
 const BooksCard = ({ books }) => {
@@ -8,6 +9,10 @@ const BooksCard = ({ books }) => {
       ))}
     </div>
   );
+};
+
+BooksCard.propTypes = {
+  books: PropTypes.array.isRequired,
 };
 
 export default BooksCard;
