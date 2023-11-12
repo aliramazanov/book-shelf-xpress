@@ -23,7 +23,7 @@ const EditBook = () => {
         setTitle(response.data.title);
       })
       .catch((error) => {
-        alert("An error happened. Please Chack console");
+        alert("An error happened");
         console.log(error);
       });
   }, []);
@@ -37,7 +37,7 @@ const EditBook = () => {
     axios
       .put(`http://localhost:5555/books/${id}`, data)
       .then(() => {
-        enqueueSnackbar("Book Edited successfully", { variant: "success" });
+        enqueueSnackbar("Book has been edited successfully", { variant: "success" });
         navigate("/");
       })
       .catch((error) => {

@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import { PORT, uri } from "./config.js";
+import { port, uri } from "./config.js";
 import booksRoute from "./routes/booksRoute.js";
 
 const app = express();
@@ -9,14 +9,6 @@ const app = express();
 app.use(express.json());
 
 app.use(cors());
-
-// app.use(
-//   cors({
-//     origin: "http://localhost:5555",
-//     methods: ["GET", "POST", "PUT", "DELETE"],
-//     allowedHeaders: ["Content-Type"],
-//   })
-// );
 
 app.get("/", (request, response) => {
   console.log(request);
@@ -31,9 +23,9 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("Application successfully connected to the DataBase");
-    app.listen(PORT, () => {
-      console.log(`Application is listening to Port:${PORT}`);
+    console.log("Application successfully connected to the Database");
+    app.listen(port, () => {
+      console.log(`Application is listening to Port:${port}`);
     });
   })
   .catch((error) => {
